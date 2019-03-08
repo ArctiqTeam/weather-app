@@ -1,3 +1,5 @@
+var os = require("os");
+var hostname = os.hostname();
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
@@ -10,7 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index', {weather: null, error: null});
+  res.render('index', {weather: null, error: null, hostname: hostname});
+  console.log('New visitor to the weather app served from: ' + hostname)
 })
 
 app.post('/', function (req, res) {
@@ -26,9 +29,10 @@ app.post('/', function (req, res) {
         res.render('index', {weather: null, error: 'Error, please try again'});
       } else {
         let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-        res.render('index', {weather: weatherText, error: null});
+        res.render('index', {weather: weatherText, error: null, hostname: hostname});
       }
     }
+    console.log('New visitor to the weather app!')
   });
 })
 
