@@ -1,41 +1,40 @@
-var os = require("os");
-var hostname = os.hostname();
-const express = require('express');
-const bodyParser = require('body-parser');
-const request = require('request');
-const app = express()
+const express       = require('express');
+const bodyParser    = require('body-parser');
+const request       = require('request');
+const app           = express();
+var os              = require("os");
+var hostname        = os.hostname();
 
-const apiKey = 'f002d3d7fb3d277147c305e0be192ac6';
+const weatherApiKey = '6fff6aaa446248276619c698beb22f3d'; // https://openweathermap.org/api
+const mapApiKey     = 'Gxxyg7GH2PBHYYZvZwsABn7kldNMTGl1'; // https://developer.mapquest.com/
+const mapType       = 'sat';                              // map, hyb, sat, light, dark
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-  res.render('index', {weather: null, error: null, hostname: hostname});
-  console.log('New visitor to the weather app served from: ' + hostname)
+  res.render('index', {hostname: hostname, weather: null, error: null});
 })
 
 app.post('/', function (req, res) {
   let city = req.body.city;
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${weatherApiKey}`;
 
   request(url, function (err, response, body) {
     if(err){
-      res.render('index', {weather: null, error: 'Error, please try again'});
+      res.render('index', {hostname: hostname, weather: null, error: 'Error, please try again...'});
     } else {
       let weather = JSON.parse(body)
       if(weather.main == undefined){
-        res.render('index', {weather: null, error: 'Error, please try again'});
+        res.render('index', {hostname: hostname, weather: null, error: 'Error, please try again...'});
       } else {
-        let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-        res.render('index', {weather: weatherText, error: null, hostname: hostname});
+        res.render('index', {hostname: hostname, weather: weather, mapApiKey: mapApiKey, mapType: mapType, error: null});
       }
     }
-    console.log('New visitor to the weather app!')
   });
 })
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!')
+app.listen(3000, function () {
+  console.log('Running...')
 })
