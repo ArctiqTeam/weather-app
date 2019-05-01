@@ -47,7 +47,7 @@ fieldset {
   box-sizing: border-box;
   color: #fff;
   background: #183669;
-  font-family: Open Sans,Verdana;
+ /* font-family: Open Sans,Verdana;*/
   padding: 10px 15px;
   margin: 30px 0px;
   -webkit-transition: all 0.1s ease-in-out;
