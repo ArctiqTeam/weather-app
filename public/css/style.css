@@ -6,7 +6,7 @@
 body {
   width: 800px;
   margin: 0 auto;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
   background-image: url("/weatherlogoblue.jpg");
   background-size: cover;
  -moz-background-size: cover;
