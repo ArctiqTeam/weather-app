@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Arctiq Weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono|ZCOOL+QingKe+HuangYou" rel="stylesheet" />
+    <style>
+      body { background-image: url('<%- bgURL %>'); }  
+    </style>
+    <script type="text/javascript">
+      window.onload = function() {
+        document.getElementById("city").focus();
+      };
+      function toggle() {
+        var x = document.getElementById("json");
+        x.style.display = "block";
+        var y = document.getElementById("show");
+        y.style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="box">
+      <p>
+        Arctiq Weather and Map &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.2<br />
+        -----------------------------------------------<br />
+      </p>
+      <form method="post">
+        Lookup ........ : <input name="city" type="text" id="city" placeholder="Type city name and hit enter." required>
+      </form>
+      <% if ( error !== null ) { %>
+        <p class="highlight"><%= error %></p>
+      <% } %>
+      <% if(weather !== null){ %>
+        <p class="large">
+          <%= Math.round(weather.main.temp) %><sup>&#176;C</sup>
+        </p>
+        <p>
+          City .......... : <span class="highlight"><%= weather.name %>, <%= weather.sys.country %></span><br />
+          Temperature ... : <span class="highlight"><%= Math.round(weather.main.temp) %>&#176;C</span><br />
+          Humidity ...... : <span class="highlight"><%= Math.round(weather.main.humidity) %>%</span><br />
+          Wind .......... : <span class="highlight"><%= Math.round(weather.wind.speed) %> m/s</span>
+        </p>
+      <% } %>
+      <p class="dimmed">
+        Hostname ...... : <%= hostname %>
+      </p>
+      <p style="text-align:right"><img class="logo" src="/logo.png" /></p>
+    </div>
+  </body>
+</html>

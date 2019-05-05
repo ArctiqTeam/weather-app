@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 25px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #666666;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+input, input:focus {
+  padding: 0;
+  margin: 0;
+  width:300px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: #ffea00;
+}
+
+.box {
+  display: inline-block;
+  position: relative; 
+  z-index: 1;
+  margin: 0;
+  padding: 25px 25px 0 25px;
+  border-radius: 7px;
+  background: rgba(24,54,105,0.9);
+}
+
+.highlight {
+  color: #ffea00;
+}
+
+.dimmed {
+  color: #999999;
+}
+
+.logo {
+  margin: 25px 0 0 0;
+  max-width: 50%;
+}
+
+.large {
+  text-align: center;
+  font-size: 250px;
+  color: #ffffff;
+  font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+}
+
+.large sup {
+  font-size: 100px;
+}
+
+#googlemaps { 
+  height: 100%; 
+  width: 100%; 
+  position:absolute; 
+  top: 0; 
+  left: 0; 
+  z-index: 0;
+}
+
+@media all and (max-width: 699px) {
+
+  body {
+    font-size: 9px;
+    height:100vh;
+  }
+
+  input, input:focus {
+    font-size: 9px;
+    width: 150px;
+  }
+
+  .bottomright {
+    max-width: 100px;
+  }
+
+  .large {
+    font-size: 150px;
+  }
+
+  .large sup {
+    font-size: 50px;
+  }
+
+}
