@@ -1,9 +1,12 @@
-FROM node:carbon
-WORKDIR /usr/src/app
+FROM node:10
 USER root
+
+WORKDIR /usr/src/app
 COPY . .
+
 RUN npm install npm@latest -g
+RUN npm install express body-parser request ejs -S
 RUN npm cache verify
-RUN npm i -S express body-parser request ejs
-EXPOSE 8080
+
+EXPOSE 80
 CMD [ "npm", "start" ]
