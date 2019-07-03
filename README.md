@@ -35,7 +35,7 @@ $ oc new-app https:/github.com/arctiqteam/weather-app#static
 
 The new slick weather app with dynamic background images and maps
 
-####![Image of dynamic weather app](images/dynamic.jpg)
+![Image of dynamic weather app](images/dynamic.jpg)
 
 ## Offline branch
 
