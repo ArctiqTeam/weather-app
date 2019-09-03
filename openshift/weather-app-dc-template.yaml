@@ -1,0 +1,26 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    app: weather
+  name: weather
+spec:
+  replicas: 1
+  selector:
+    app: weather
+    deploymentconfig: weather
+  strategy:
+    type: Rolling
+  template:
+    metadata:
+      labels:
+        app: weather
+        deploymentconfig: weather
+    spec:
+      containers:
+      - image: docker.io/daniyalj/weather:latest
+        imagePullPolicy: Always
+        name: weather
+        ports:
+        - containerPort: 8080
+          protocol: TCP
