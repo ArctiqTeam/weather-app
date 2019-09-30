@@ -1,6 +1,8 @@
 FROM node:carbon
 WORKDIR /usr/src/app
 USER root
+ADD https://get.aquasec.com/microscanner /
+RUN chmod +x /microscanner
 COPY . .
 RUN npm install npm@latest -g
 RUN npm cache verify
