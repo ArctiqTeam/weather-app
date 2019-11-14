@@ -20,4 +20,4 @@ spec:
         type: image
         params:
           - name: url
-            value: gcr.io/iceberg-234522/weather:mountain
+            value: gcr.io/iceberg-234522/weather:washington
