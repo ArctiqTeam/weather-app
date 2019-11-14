@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: weather-pipeline-run-v4
+  generateName: weather-pipeline-run-
 spec:
   serviceAccountName: weather-svc
   pipelineRef:
@@ -20,4 +20,4 @@ spec:
         type: image
         params:
           - name: url
-            value: gcr.io/iceberg-234522/weather:washingtonv4
+            value: gcr.io/iceberg-234522/weather:toronto
