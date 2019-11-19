@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  generateName: weather-pipeline-run-
+  name: weather-pipeline-run-v6
 spec:
   serviceAccountName: weather-svc
   pipelineRef:
