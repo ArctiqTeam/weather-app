@@ -14,6 +14,7 @@ This repo was used to build an app and promote across different OpenShift cluste
     * PROD B Cluster
 * Replace cluster URLs in <your-openshift-console> snippets.
 
+
 ### How to run:
 
 `oc create -f jenkins/pipeline.yaml`
