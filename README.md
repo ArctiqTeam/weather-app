@@ -1,4 +1,4 @@
-# Arctiq Weather App - utilized in an OpenShift Pipeline
+# Arctiq Weather App
 Simple Node.js Command Line Weather Application
 
 * Built upon bmorielli25's [weather-app](https://github.com/bmorelli25/simple-nodejs-weather-app)
