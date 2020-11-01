@@ -5,6 +5,7 @@ Simple Node.js Command Line Weather Application
 
 This repo was used to build an app and promote across different OpenShift clusters in this [demo](https://www.arctiq.ca/our-blog/2018/10/6/multi-cloud-application-container-deployment-pipeline/)
 
+
 ### Pre-requisites
 
 * [Skopeo Jenkins slave image for image promotion](https://github.com/redhat-cop/containers-quickstarts/tree/master/jenkins-slaves/jenkins-slave-image-mgmt)
