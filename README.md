@@ -7,6 +7,7 @@ This repo was used to build an app and promote across different OpenShift cluste
 
 ### Pre-requisites
 
+
 * [Skopeo Jenkins slave image for image promotion](https://github.com/redhat-cop/containers-quickstarts/tree/master/jenkins-slaves/jenkins-slave-image-mgmt)
 * 3 OpenShift clusters:
     * DEV/QA Cluster
