@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/component: serviceaccount
+    app.kubernetes.io/managed-by: kf
+    app.kubernetes.io/name: weather
+  name: sa-weather
+secrets:
+- name: sa-weather-token-9xgbt
+
