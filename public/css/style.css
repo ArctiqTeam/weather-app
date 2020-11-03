@@ -7,8 +7,8 @@ body {
   width: 800px;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
-  /* background-image: url("https://raw.githubusercontent.com/daniyalj/arctiq-mountain/master/weatherlogoblue.jpg"); */
-  background-image: url("https://github.com/stewartshea/arctiq-backgrounds/raw/master/sf-bg-arctiq.jpg");
+  background-image: url("https://raw.githubusercontent.com/daniyalj/arctiq-mountain/master/weatherlogoblue.jpg");
+  /* background-image: url("https://github.com/stewartshea/arctiq-backgrounds/raw/master/sf-bg-arctiq.jpg"); */
   background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
