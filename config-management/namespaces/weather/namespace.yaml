@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kf
+    istio-injection: enabled
+  name: weather
+spec:
+  finalizers:
+  - kubernetes
+
